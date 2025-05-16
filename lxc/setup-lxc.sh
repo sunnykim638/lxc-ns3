@@ -17,10 +17,10 @@ brctl addbr br-server
 brctl addbr br-authwifi
 
 #create TAP devices
-ip tuntap add dev tap-auth mode tap
-ip tuntap add dev tap-authwifi mode tap
-ip tuntap add dev tap-client mode tap
-ip tuntap add dev tap-server mode tap
+tunctl -t tap-auth
+tunctl -t tap-authwifi
+tunctl -t tap-client
+tunctl -t tap-server
 
 #set TAP devices persistence, assign IP addresses
 ip link set tap-auth up promisc on
