@@ -26,7 +26,7 @@ ip link set tap-authwifi down
 ip link set tap-client down
 ip link set tap-server down
 
-ip link delete tap-auth
-ip link delete tap-authwifi
-ip link delete tap-client
-ip link delete tap-server
+tunctl -d tap-auth
+tunctl -d tap-authwifi
+tunctl -d tap-client
+tunctl -d tap-server
